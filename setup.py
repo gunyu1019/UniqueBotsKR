@@ -4,7 +4,7 @@ setup(
     name='UniqueBotsKR',
     version='1.0',
     packages=['UniqueBotsKR'],
-    url='https://uniquebots.kr/',
+    url='https://github.com/gunyu1019/UniqueBotsKR',
     license='MIT',
     author='gunyu1019',
     author_email='gunyu1019@yhs.kr',
