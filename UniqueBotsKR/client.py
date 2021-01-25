@@ -83,7 +83,7 @@ class client:
         log.debug("서버 포스트 요청이 들어왔습니다.")
         if guild_count is None:
             guild_count = self.GuildCount()
-        await self.http.postGuildCount(eguild_count=guild_count)
+        await self.http.postGuildCount(guild_count=guild_count)
 
     async def getHeart(self, bot_id ="me"):
         """본 함수는 코루틴(비동기)를 기반으로 돌아갑니다.

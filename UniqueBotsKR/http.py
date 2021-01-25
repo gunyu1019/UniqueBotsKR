@@ -80,7 +80,7 @@ class httpClient:
             if authorize:
                 raise AuthorizeError("해당 함수는 토큰값이 필요합니다.")
         else:
-                headers['Authorization'] = f'Bot {self.token}'
+            headers['Authorization'] = f'Bot {self.token}'
         kwargs['headers'] = headers
         log.debug(f"{url}를 향한 요청이 들어왔습니다.")
         async with aiohttp.ClientSession() as session:
