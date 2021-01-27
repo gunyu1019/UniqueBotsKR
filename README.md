@@ -167,7 +167,7 @@ async def on_ready():
 @client.event
 async def on_message(message):
     author = message.author
-    print(f"{author}투표 유무: {Bot.getVote(author.id)}")
+    print(f"{author}투표 유무: {await Bot.getHeartUser(author.id)}")
     # Bool 형태이므로, 두 값에는 True 혹은 False가 리턴됨.
 
 client.run('Discord 토큰')
