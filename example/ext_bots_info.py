@@ -3,23 +3,24 @@ import discord
 from discord.ext import commands
 import UniqueBotsKR
 
-bot = commands.Bot(command_prefix='접두사')
+client = commands.Bot(command_prefix='접두사')
+Bot = UniqueBotsKR.client(client, token='UniqueBots 봇 토큰')
+
 TOKEN='토큰'
 unitoken='토큰'
 
-@bot.event
+@client.event
 async def on_ready():
     print("디스코드 봇 로그인이 완료되었습니다.")
-    print("디스코드봇 이름:" + bot.user.name)
-    print("디스코드봇 ID:" + str(bot.user.id))
-    print("디스코드봇 버전:" + str(bot.__version__))
+    print("디스코드봇 이름:" + client.user.name)
+    print("디스코드봇 ID:" + str(client.user.id))
+    print("디스코드봇 버전:" + str(client.__version__))
     print('------')
 
-@bot.command(name="유니크봇리스트",aliases=["uniquebotslist"], help="로드을 합니다.")
+@client.command(name="유니크봇리스트",aliases=["uniquebotslist"], help="로드을 합니다.")
 async def uniquebots_list(ctx):
     status_dict: dict = {'online': '온라인', 'offline': '오프라인','invisible': '오프라인', 'idle': "자리비움",'dnd': "방해금지"}
-    Unique=UniqueBotsKR.client(bot,unitoken)
-    data= await Unique.getBots()
+    data= await Bot.getBots()
     n = 1
     rank=[]
     embed = discord.Embed(title="봇하트순위", description ='[홈페이지](https://uniquebots.kr/)')
@@ -34,4 +35,4 @@ async def uniquebots_list(ctx):
         n += 1
     await ctx.send(embed= embed)
     
-bot.run(TOKEN)
+client.run(TOKEN)
