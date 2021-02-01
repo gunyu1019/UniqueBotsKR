@@ -9,10 +9,10 @@
   * [Categories](#Categories)
   * [Hearts](#Hearts)
 * [예시(Example)](#예시-Example)
-  * [자동으로 서버 수 업데이트하기](#자동으로-서버-수-업데이트하기)
-  * [직접 서버 수 업데이트하기](#직접-서버-수-업데이트하기)
-  * [유저 하트 유무 불러오기](#유저-하트-유무-불러오기)
-  * [봇의 아이디로 봇 정보 불러오기](#봇의-아이디로-봇-정보-불러오기)
+  * [자동으로 서버 수 업데이트하기](#자동으로-서버-수-업데이트하기) 파일:[클라이언트](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/client_update.py) [커맨드](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/ext_update.py)
+  * [직접 서버 수 업데이트하기](#직접-서버-수-업데이트하기) 파일:[클라이언트](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/client_selfupdate.py) [커맨드](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/ext_selfupdate.py)
+  * [유저 하트 유무 불러오기](#유저-하트-유무-불러오기) 파일:[클라이언트](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/client_votecheck.py) [커맨드](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/ext_votecheck.py)
+  * [봇의 아이디로 봇 정보 불러오기](#봇의-아이디로-봇-정보-불러오기) 파일:[클라이언트](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/client_getdata.py) [커맨드](https://github.com/gunyu1019/UniqueBotsKR/blob/main/example/ext_getdata.py)
 
 
 ## 설치 (Installation)
@@ -83,6 +83,8 @@ Bot 오브젝트안에 있는 Hearts 혹은, Hearts 를 통하여 불러온 목�
 * avatarURL : 사용자 프로필 사진 URL
 
 ## 예시 (Example)
+밑 예시들은 https://github.com/gunyu1019/UniqueBotsKR/tree/main/example 에 다 있습니다.
+
 ### 자동으로 서버 수 업데이트하기
 주기적으로 봇의 수를 업데이트합니다. (discord.Client 기준)
 ```python
