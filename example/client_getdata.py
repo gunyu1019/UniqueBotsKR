@@ -12,7 +12,7 @@ async def on_ready():
     print("디스코드봇 버전:" + str(discord.__version__))
     print('------')
     
-    data = await Bot.getBot(680694763036737536)
+    data = await Bot.getBot(723346442932191302)
     print(f"{data}")
     
 client.run('Discord 토큰')
