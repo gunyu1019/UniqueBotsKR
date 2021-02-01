@@ -3,11 +3,7 @@ import discord
 from discord.ext import commands
 import UniqueBotsKR
 
-INTENTS = discord.Intents.default()
-INTENTS.members = False
-INTENTS.presences = False
-
-bot = commands.Bot(command_prefix='접두사', intents=INTENTS)
+bot = commands.Bot(command_prefix='접두사')
 TOKEN='토큰'
 unitoken='토큰'
 
