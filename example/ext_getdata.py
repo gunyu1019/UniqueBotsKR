@@ -14,7 +14,7 @@ async def on_ready():
 
 @client.command(name='데이터')
 async def _update(ctx):
-    data = await Bot.getBot(680694763036737536)
+    data = await Bot.getBot(723346442932191302)
     await ctx.send(f"{data}")
     
 client.run('Discord 토큰')
