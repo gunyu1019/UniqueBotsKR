@@ -1,7 +1,7 @@
 import UniqueBotsKR
 from discord.ext import commands
 
-client = commands.Bot()
+client = commands.Bot(command_prefix='접두사')
 Bot = UniqueBotsKR.client(client, token='UniqueBots 봇 토큰')
 
 @client.event
