@@ -13,7 +13,8 @@ async def on_ready():
     print('------')
 
 @client.command(name='서버수업데이트')
-async def _update(message):
+async def _update(ctx):
     await Bot.postGuildCount()
+    await ctx.send('')
 
 client.run('Discord 토큰')
