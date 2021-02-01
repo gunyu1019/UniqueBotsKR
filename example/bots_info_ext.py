@@ -11,6 +11,14 @@ bot = commands.Bot(command_prefix='접두사', intents=INTENTS)
 TOKEN='토큰'
 unitoken='토큰'
 
+@bot.event
+async def on_ready():
+    print("디스코드 봇 로그인이 완료되었습니다.")
+    print("디스코드봇 이름:" + client.user.name)
+    print("디스코드봇 ID:" + str(client.user.id))
+    print("디스코드봇 버전:" + str(discord.__version__))
+    print('------')
+
 @bot.command(name="유니크봇리스트",aliases=["uniquebotslist"], help="로드을 합니다.")
 async def uniquebots_list(ctx):
     status_dict: dict = {'online': '온라인', 'offline': '오프라인','invisible': '오프라인', 'idle': "자리비움",'dnd': "방해금지"}
