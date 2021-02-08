@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='UniqueBotsKR',
-    version='1.2',
+    version='1.3',
     packages=['UniqueBotsKR'],
     url='https://github.com/gunyu1019/UniqueBotsKR',
     license='MIT',
