@@ -1,8 +1,8 @@
-import aiohttp
 import asyncio
+import json
 import logging
 
-import json
+import aiohttp
 
 from .errors import UniqueBotsException, HTTPException, Forbidden, NotFound, AuthorizeError
 from .model import Hearts, Bot, Categories
@@ -10,7 +10,8 @@ from .model import Hearts, Bot, Categories
 baseURL = "https://uniquebots.kr/graphql"
 log = logging.getLogger(__name__)
 
-def getGraphQL(query: dict, variables: dict = None):
+
+def getGraphQL(query, variables=None):
     if variables is not None:
         return json.dumps({
             "query": query,
@@ -21,10 +22,12 @@ def getGraphQL(query: dict, variables: dict = None):
             "query": query
         }, indent=4)
 
+
 async def content_type(response):
-    if response.headers['Content-Type'] == 'application/json; charset=utf-8':
+    if response.headers.get('Content-Type') == 'application/json; charset=utf-8':
         return await response.json()
     return await response.text()
+
 
 class httpClient:
     """UniqueBots의 Http 클라이언트를 반환합니다.
@@ -40,6 +43,7 @@ class httpClient:
         **token: Optional[dict]
             UniqueBots의 토큰 값이 들어갑니다.
     """
+
     def __init__(self, token=None, loop: asyncio.AbstractEventLoop = asyncio.get_event_loop()):
         self.loop = loop
         self.token = token
@@ -82,7 +86,6 @@ class httpClient:
         else:
             headers['Authorization'] = f'Bot {self.token}'
         kwargs['headers'] = headers
-        log.debug(f"{url}를 향한 요청이 들어왔습니다.")
         async with aiohttp.ClientSession() as session:
             async with session.request(method, url, **kwargs) as resp:
                 data = await content_type(resp)
@@ -156,7 +159,7 @@ class httpClient:
             .errors.HTTPException
                 알수없는 HTTP 에러가 발생했습니다, 주로 400에 발생합니다.
         """
-        if bot_id == None:
+        if bot_id is None:
             if self.is_token:
                 bot_id = "me"
             else:
@@ -196,7 +199,7 @@ class httpClient:
             .errors.HTTPException
                 알수없는 HTTP 에러가 발생했습니다, 주로 400에 발생합니다.
         """
-        if bot_id == None:
+        if bot_id is None:
             if self.is_token:
                 bot_id = "me"
             else:

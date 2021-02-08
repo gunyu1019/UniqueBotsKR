@@ -17,6 +17,7 @@ class UniqueBotsResponse:
     def __dict__(self):
         return self.response
 
+
 class Hearts(UniqueBotsResponse):
     """.HTTPClient의 디스코드 하트 정보 데이터의 모델입니다.
 
@@ -30,6 +31,7 @@ class Hearts(UniqueBotsResponse):
     def __init__(self, response):
         super().__init__(response['from'])
 
+
 class Bot(UniqueBotsResponse):
     """.HTTPClient의 디스코드 봇 정보 데이터의 모델입니다.
 
@@ -42,6 +44,7 @@ class Bot(UniqueBotsResponse):
     """
     def __init__(self, response):
         super().__init__(response)
+
 
 class Categories(UniqueBotsResponse):
     """.HTTPClient의 디스코드 봇 카테고리 데이터의 모델입니다.

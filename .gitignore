@@ -133,4 +133,4 @@ dmypy.json
 .vscode/
 
 # Debug File
-Test/
+test.py

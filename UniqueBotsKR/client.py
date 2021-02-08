@@ -1,8 +1,10 @@
 import asyncio
 import logging
 
-log = logging.getLogger(__name__)
 from .http import httpClient
+
+log = logging.getLogger(__name__)
+
 
 class client:
     """discord.py Client를 기반으로 한 UniqueBots 클라이언트에 반환합니다.
@@ -28,6 +30,7 @@ class client:
         self.http = httpClient(token=self.token, loop=self.loop)
         if autopost:
             self.loop.create_task(self.autopost())
+        self.time = 30
 
     async def autopost(self, time: int = 30):
         """본 함수는 코루틴(비동기)를 기반으로 돌아갑니다.
@@ -85,7 +88,7 @@ class client:
             guild_count = self.GuildCount()
         await self.http.postGuildCount(guild_count=guild_count)
 
-    async def getHeart(self, bot_id ="me"):
+    async def getHeart(self, bot_id="me"):
         """본 함수는 코루틴(비동기)를 기반으로 돌아갑니다.
             검색하시는 디스코드 봇의 하트 목록을 리스트로 불러옵니다.
 
