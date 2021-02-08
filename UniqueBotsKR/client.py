@@ -21,7 +21,7 @@ class client:
             자동으로 1800초(30분)마다 길드 정보를 등록된 토큰값을 통하여 전송할지 설정합니다. 기본값은 False입니다.
     """
 
-    def __init__(self, bot, token: str = None, loop: asyncio.AbstractEventLoop = None, autopost: bool = True):
+    def __init__(self, bot, token: str = None, loop: asyncio.AbstractEventLoop = None, autopost: bool = False):
         self.bot = bot
         self.token = token
         self.loop = loop or bot.loop
